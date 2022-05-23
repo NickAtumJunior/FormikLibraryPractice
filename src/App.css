@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+}
+.main{
+
+  padding: 1%;
+  border: 1px solid rgb(158, 110, 110);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height:50%;
+  margin-left: 30%;
+  margin-top: 17%;
+}
+
+.textfield{
+  align-items: center;
+  text-align: left;  
+  margin: 1%;
+}
+
+.errors{
+  color: red;
+}
