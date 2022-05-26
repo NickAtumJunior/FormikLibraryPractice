@@ -5,6 +5,7 @@ import { Button, ButtonGroup, Dialog, DialogContent, Grid, Stack, TextField } fr
 import { useState } from 'react';
 function App() {
 const [openDialog,setOpenDialog] = useState(false)
+const [openDialogDummy,setOpenDialogDummy] = useState(false)
 
 const handleCloseDialog = () =>{
   setOpenDialog(false)
@@ -12,6 +13,14 @@ const handleCloseDialog = () =>{
 
 const  openNow = () =>{
   setOpenDialog(true)
+}
+
+const handleCloseDialogDummy = () =>{
+  setOpenDialogDummy(false)
+}
+
+const openNowDummy = () => {
+  setOpenDialogDummy(true)
 }
  const formik = useFormik({
 
@@ -33,7 +42,7 @@ const  openNow = () =>{
        }),
        onSubmit: () =>{
         console.log(formik.values)
-        
+        openNowDummy()
        },
        
        
@@ -109,6 +118,16 @@ const  openNow = () =>{
                  Your username is : {formik.values.username} <br></br>
                  Your Email is : {formik.values.email}<br></br>
                  Your Password is : {formik.values.passwordone}<br></br>
+               </Stack>
+            </DialogContent>
+          </Dialog>
+
+
+
+          <Dialog onClose={handleCloseDialogDummy} open={openDialogDummy}>
+            <DialogContent>
+               <Stack>
+                 <h1>Your form submitted</h1>
                </Stack>
             </DialogContent>
           </Dialog>
